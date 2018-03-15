@@ -34,7 +34,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 </head>
 
 <body data-spy="scroll" data-target="#navigation" data-offset="50">
-<a href="https://github.com/acacha/adminlte-laravel"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/acacha/adminlte-laravel"><img style="position: absolute; top: 0; left: 0; border: 0;z-index: 999;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
 <div id="app" v-cloak>
     <!-- Fixed navbar -->
     <div id="navigation" class="navbar navbar-default navbar-fixed-top">
