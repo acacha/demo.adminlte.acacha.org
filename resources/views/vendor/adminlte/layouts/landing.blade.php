@@ -76,7 +76,24 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                         <h3>A <a href="https://laravel.com/">Laravel</a> {{ trans('adminlte_lang::message.laravelpackage') }}
                             scaffolding/boilerplate {{ trans('adminlte_lang::message.to') }} <a href="https://almsaeedstudio.com/preview">AdminLTE</a> {{ trans('adminlte_lang::message.templatewith') }}
                             <a href="http://getbootstrap.com/">Bootstrap</a> 3.0 {{ trans('adminlte_lang::message.and') }} <a href="http://blacktie.co/demo/pratt/">Pratt</a> Landing page</h3>
-                        <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">{{ trans('adminlte_lang::message.gedstarted') }}</a></h3>
+                        <h5 style="text-align: center;">Do you want to stay informed?</h5>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                            </div>
+                        @endif
+                        @if ( Session::has('msg'))
+                            <div class="alert alert-success">
+                                {{ Session::get('msg') }}
+                            </div>
+                        @endif
+                        <form method="POST" action="/newsletter">
+                            @csrf
+                            <input type="text" name="email" placeholder="example@email.com" style="border-radius: 0.2em; padding: 0.2em;-webkit-appearance: none;-appearance: none; border-width: 1px;">
+                            <h3><button class="btn btn-lg btn-success">Subscribe me!</button></h3>
+                        </form>
                     </div>
                     <div class="col-lg-2">
                         <h5>{{ trans('adminlte_lang::message.amazing') }}</h5>
